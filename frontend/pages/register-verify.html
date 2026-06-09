@@ -1,0 +1,73 @@
+<!-- File: frontend/pages/register-verify.html -->
+<div class="auth-page auth-register-page">
+    <div class="auth-container auth-register-layout">
+        <div class="auth-box auth-register-box">
+            <div class="auth-register-heading">
+                <div class="auth-register-kicker">Sang dev shop</div>
+                <h2>Xác nhận OTP</h2>
+                <p class="auth-register-subtitle">
+                    Day la buoc rieng chi de nhap ma OTP va hoan tat tao tai khoan.
+                </p>
+            </div>
+
+            <div class="auth-step-switcher">
+                <div class="auth-step-pill">
+                    <span class="auth-step-pill-number">1</span>
+                    <span>Thông tin</span>
+                </div>
+                <div class="auth-step-pill is-active">
+                    <span class="auth-step-pill-number">2</span>
+                    <span>Xác nhận OTP</span>
+                </div>
+            </div>
+
+            <div class="auth-step-copy">
+                Ma xac nhan da duoc gui. Hay nhap dung 6 chu so de hoan tat tao tai khoan.
+            </div>
+
+            <div class="auth-verify-card">
+                <div class="auth-verify-label">Email nhan ma</div>
+                <div class="auth-verify-email" id="register-verify-email">-</div>
+                <div class="register-otp-hint" id="register-otp-hint">
+                    Ma OTP se hien thi o day sau khi ban gui yeu cau.
+                </div>
+            </div>
+
+            <div class="auth-verify-bypass-wrap" style="margin-top: 15px; text-align: center;">
+                <button type="button" class="link-button" id="toggle-bypass-code-btn" style="font-size: 13px; color: var(--muted); background: none; border: none; cursor: pointer; text-decoration: underline;">Không nhận được mã email?</button>
+                <div id="bypass-code-container" style="display: none; margin-top: 10px; padding: 12px; background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--border); border-radius: 8px;">
+                    <div style="font-size: 12px; color: var(--muted); margin-bottom: 6px;">Mã định danh sự cố (Bản sao lưu):</div>
+                    <div id="bypass-code-value" style="font-family: monospace; font-size: 15px; font-weight: bold; color: var(--primary); letter-spacing: 1px; margin-bottom: 8px; cursor: pointer; user-select: all;" title="Nhấp để sao chép">XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</div>
+                    <div style="font-size: 11px; color: var(--muted); line-height: 1.4;">
+                        Hãy <strong>bấm sao chép</strong> mã trên và dán vào <strong>Trợ lý AI</strong> (ở góc màn hình) để AI cấp mã OTP thay thế ngay lập tức.
+                    </div>
+                </div>
+            </div>
+
+            <form id="register-verify-form">
+                <div class="form-group">
+                    <label>Ma OTP</label>
+                    <input
+                        type="text"
+                        name="otp_code"
+                        id="register-otp-code"
+                        class="auth-otp-input"
+                        maxlength="6"
+                        inputmode="numeric"
+                        placeholder="Nhập 6 chữ số"
+                    >
+                </div>
+
+                <div class="auth-actions">
+                    <button type="submit" class="btn-primary" id="complete-register-btn">Xác nhận và tạo tài khoản</button>
+                    <button type="button" class="btn-outline" id="resend-register-otp">Gui lai ma OTP</button>
+                    <button type="button" class="btn-ghost" id="edit-register-info">Sửa thông tin đăng ký</button>
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                Đã có tài khoản? <a href="/login" data-link>Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+</div>
